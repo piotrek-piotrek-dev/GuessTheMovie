@@ -1,4 +1,4 @@
-from Udemy [Java basics course]((https://learn.udacity.com/courses/ud283)https://learn.udacity.com/courses/ud283)
+from Udemy [Java basics course](https://learn.udacity.com/courses/ud283)
 
 Project 1: Guess The Movie
 Ok, it's time to build your own project in Java, this time you'll be
