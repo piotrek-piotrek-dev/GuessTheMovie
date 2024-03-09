@@ -4,9 +4,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
+import java.util.random.RandomGenerator;
 
-public class FileReader {
+public class TitleBase {
     //public static void main(String[] args) {
     //    System.out.println("hi there!");
     //}
@@ -18,11 +20,11 @@ public class FileReader {
     /*
         constructors, used to properly handle file objects with their attributes
      */
-    public FileReader(String filePath, Encoding encoding){
+    public TitleBase(String filePath, Encoding encoding){
         this.filePath = Paths.get(filePath);
         this.encoding = encoding;
     }
-    public FileReader(String filePath){
+    public TitleBase(String filePath){
         this(filePath, Encoding.plaintext);
     }
 
@@ -55,6 +57,12 @@ public class FileReader {
             return this.scanner.nextLine();
         else
             return null;
+    }
+
+    public String pickRandomTitle(){
+        List t = this.readFileToList();
+        int r = new Random().nextInt(0, t.size()-1);
+        return t.get(r).toString();
     }
 
 }
